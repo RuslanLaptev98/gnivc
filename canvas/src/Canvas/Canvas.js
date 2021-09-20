@@ -63,14 +63,23 @@ const Canvas = () => {
         */
         // среднее между четырьмя самыми высокими и среднее между четырьмя самыми низкими для Y
         // среднее между четырьмя самыми левыми и среднее между четырьмя самыми правыми для X
-    }, [lines])
 
-    // Convert lines to rectangle
-    React.useEffect(() => {
-        if (lines.length === 4 && isDrawing === false) {
+        // Convert lines to rectangle
+        if (lines.length && lines.length % 4 === 0 && isDrawing === false) {
             console.log('4 lines')
+            const rectangle = generator.rectangle(100, 100, 100, 100, {
+                stroke: '#5bc197',
+            })
+            setRectangles((prevState) => [...prevState, rectangle])
         }
     }, [lines, isDrawing])
+
+    React.useEffect(() => {
+        const canvas = canvasRef.current
+        const roughCanvas = rough.canvas(canvas)
+        rectangles.forEach((rectangle) => roughCanvas.draw(rectangle))
+        console.log(rectangles.length)
+    })
 
     return (
         <div className="Canvas">
