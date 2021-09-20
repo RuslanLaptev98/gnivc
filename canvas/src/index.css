@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Electrolize', sans-serif;
+}
+.App {
+    background: linear-gradient(
+        183.48deg,
+        #192127 2.87%,
+        rgba(25, 33, 39, 0.8) 98.77%
+    );
+    height: 100vh;
+}
