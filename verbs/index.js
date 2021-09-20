@@ -30,4 +30,4 @@ const verbModifier = (verb, pronoun) => {
     return result
 }
 
-console.log(verbModifier('бегать', 'мы'))
+console.log(verbModifier('бегать', 'ты'))
